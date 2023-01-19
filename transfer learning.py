@@ -1,12 +1,13 @@
+#################### Requirements #########################################vv
 import numpy as np
 import os
 import cv2
-
+#################################################################################################################
 dir='/content/sample_data/flower' # path of the folder having subfolders for each category of the flower
 base = os.listdir(dir)
 
-x=[] #
-y=[]
+x=[] ########### Input ###########################
+y=[] ############ Output######################
 count=0
 for i in base:
   for j in os.listdir(dir+'/'+i):
@@ -24,7 +25,7 @@ yarr=np.array(y)
 xarr=xarr/255.0   # Normalization of images
 yarr.reshape(-1,1)  
 yarr.shape
-
+###################################################################################
 #Importing the pretrained VGG16 neural network
 from tensorflow.keras.applications.vgg16 import VGG16
 IMAGE_SIZE = [224, 224]
